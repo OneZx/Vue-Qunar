@@ -2,7 +2,7 @@
     <div>
         <home-header></home-header>
         <home-swiper></home-swiper>
-        <div>test</div>
+        <div>测试一下</div>
     </div>
 </template>
 <script>
