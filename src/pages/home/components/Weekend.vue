@@ -2,11 +2,7 @@
     <div>
         <div class="title">周末去哪儿</div>
         <ul>
-            <li
-                class="item border-bottom"
-                v-for="item in weekendList"
-                :key="item.id"
-            >
+            <li class="item border-bottom" v-for="item in list" :key="item.id">
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="item.imgUrl" />
                 </div>
@@ -23,43 +19,10 @@
 export default {
     name: 'HomeWeekend',
     props: {
-        // list: Array
+        list: Array
     },
     data() {
-        return {
-            weekendList: [
-                {
-                    id: '0001',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/p/tts9/1806/43/97f7a9086ce32902.jpg_r_240x160x90_f66f5a82.jpg',
-                    title: '海洋世界',
-                    desc:
-                        '浪漫青岛行山东警方 i 欧啊喂哦如外哦额入澳 iu 日欧容为 u 肉 i'
-                },
-                {
-                    id: '0002',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/p/tts9/1806/43/97f7a9086ce32902.jpg_r_240x160x90_f66f5a82.jpg',
-                    title: '海洋世界',
-                    desc: '浪漫青岛行'
-                },
-                {
-                    id: '0003',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/p/tts9/1806/43/97f7a9086ce32902.jpg_r_240x160x90_f66f5a82.jpg',
-                    title: '海洋世界',
-                    desc: '浪漫青岛行,欢迎环球旅行第一站，哈哈哈哈哈哈哈哈哈哈'
-                },
-                {
-                    id: '0004',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/p/tts9/1806/43/97f7a9086ce32902.jpg_r_240x160x90_f66f5a82.jpg',
-                    title: '海洋世界',
-                    desc:
-                        '浪漫青岛行，速度发哟啊谁都有佛阿杜佛啊 u 的佛 i 啊 u 都为日欧文哦 i 人'
-                }
-            ]
-        }
+        return {}
     }
 }
 </script>

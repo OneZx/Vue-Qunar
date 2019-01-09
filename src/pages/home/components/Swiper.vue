@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption" v-if="showSwiper">
             <!-- slides -->
-            <swiper-slide v-for="item in swiperList" :key="item.id">
+            <swiper-slide v-for="item in list" :key="item.id">
                 <img class="swiper-img" :src="item.imgUrl"
             /></swiper-slide>
             <!-- Optional controls -->
@@ -13,30 +13,21 @@
 <script>
 export default {
     name: 'HomeSwiper',
+    props: {
+        list: Array
+    },
     data() {
         return {
             swiperOption: {
                 // 这里改成 {el:''} 不然pagination不起作用
                 pagination: { el: '.swiper-pagination' },
                 loop: true
-            },
-            swiperList: [
-                {
-                    id: '0001',
-                    imgUrl:
-                        '//pic5.40017.cn/03/000/fe/d3/rBANB1wYvraAJuMPAAC4_kD85Rs749.jpg'
-                },
-                {
-                    id: '0002',
-                    imgUrl:
-                        '//pic5.40017.cn/02/001/16/25/rBANDFjdtsmACeIoAAEAANmW338998.jpg'
-                },
-                {
-                    id: '0003',
-                    imgUrl:
-                        '//pic4.40017.cn/index/slide/2017/02/11/21/Upv1S6.jpg'
-                }
-            ]
+            }
+        }
+    },
+    computed: {
+        showSwiper() {
+            return this.list.length
         }
     }
 }
