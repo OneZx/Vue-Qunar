@@ -1,4 +1,5 @@
 <template>
+    <!-- 组件动画  -->
     <transition> <slot></slot> </transition>
 </template>
 
