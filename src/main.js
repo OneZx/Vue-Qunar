@@ -6,6 +6,8 @@ import router from './router'
 // 点击延迟 npm install fastclick --save
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+import store from './store'
 import 'swiper/dist/css/swiper.css'
 
 import 'styles/reset.css'
@@ -22,6 +24,7 @@ Vue.use(VueAwesomeSwiper /* { default global options } */)
 new Vue({
     el: '#app',
     router,
+    store,
     components: { App },
     template: '<App/>'
 })

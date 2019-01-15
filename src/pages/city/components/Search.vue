@@ -48,6 +48,7 @@ export default {
     },
     watch: {
         keyword() {
+            // 节流
             if (this.timer) {
                 clearTimeout(this.timer)
             }
@@ -74,6 +75,7 @@ export default {
     methods: {
         handleCityClick(city) {
             this.changeCity(city)
+            // 路由跳转
             this.$router.push('/')
         },
         ...mapMutations(['changeCity'])

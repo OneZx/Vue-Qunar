@@ -46,7 +46,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
-import { mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
     name: 'CityList',
     props: {
@@ -55,21 +55,25 @@ export default {
         letter: String
     },
     computed: {
-        // ...mapState({
-        //     currentCity: '北京'
-        // })
+        ...mapState({
+            // 把vuex中的公用数据映射到这个组件里，映射后的名字叫currentCity
+            currentCity: 'city'
+        })
     },
     methods: {
         handleCityClick(city) {
+            // this.$store.dispatch('changeCity', city)
+            // this.$store.commit('changeCity', city)
             this.changeCity(city)
             this.$router.push('/')
         },
+        // 把mutations中changeCity映射到组件中名字叫changeCity的方法里
         ...mapMutations(['changeCity'])
     },
     // 监听器
     watch: {
         letter() {
-            console.log(this.letter)
+            // console.log(this.letter)
             if (this.letter) {
                 const element = this.$refs[this.letter][0]
                 // console.log(this.$refs[this.letter])

@@ -38,9 +38,10 @@ export default {
             timer: null
         }
     },
+    // 生命周期钩子 缓存this.startY
     updated() {
         this.startY = this.$refs['A'][0].offsetTop
-        console.log(this.startY)
+        // console.log(this.startY)
     },
     methods: {
         // e事件对象
@@ -53,6 +54,7 @@ export default {
             this.touchStatus = true
         },
         handleTouchMove(e) {
+            // 函数截流
             if (this.touchStatus) {
                 if (this.timer) {
                     clearTimeout(this.timer)
