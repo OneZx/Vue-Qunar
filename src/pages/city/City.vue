@@ -7,20 +7,26 @@
             :hot="hotCities"
             :letter="letter"
         ></city-list>
+        <city-alphabet
+            :cities="cities"
+            @change="handleLetterChange"
+        ></city-alphabet>
     </div>
 </template>
+
 <script>
+import axios from 'axios'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
-import axios from 'axios'
-
+import CityAlphabet from './components/Alphabet'
 export default {
     name: 'City',
     components: {
         CityHeader,
         CitySearch,
-        CityList
+        CityList,
+        CityAlphabet
     },
     data() {
         return {
@@ -35,6 +41,7 @@ export default {
         },
         handleGetCityInfoSucc(res) {
             res = res.data
+            console.log(res)
             if (res.ret && res.data) {
                 const data = res.data
                 this.cities = data.cities
@@ -42,6 +49,7 @@ export default {
             }
         },
         handleLetterChange(letter) {
+            // console.log(letter)
             this.letter = letter
         }
     },
@@ -50,4 +58,5 @@ export default {
     }
 }
 </script>
+
 <style lang="stylus" scoped></style>
