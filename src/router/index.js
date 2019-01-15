@@ -24,5 +24,9 @@ export default new Router({
             name: 'Detail',
             component: Detail
         }
-    ]
+    ],
+    // 让路由切换的时候始终显示再最顶部
+    scrollBehavior(to, from, savedPosition) {
+        return { x: 0, y: 0 }
+    }
 })

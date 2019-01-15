@@ -32,6 +32,7 @@ export default {
     },
     methods: {
         getDetailInfo() {
+            console.log(this.$route.params.id)
             axios
                 .get('/api/detail.json', {
                     params: {
@@ -44,6 +45,7 @@ export default {
             res = res.data
             if (res.ret && res.data) {
                 const data = res.data
+                console.log(data)
                 this.sightName = data.sightName
                 this.bannerImg = data.bannerImg
                 this.gallaryImgs = data.gallaryImgs
@@ -51,9 +53,11 @@ export default {
             }
         }
     },
+    // 因为keep-alive做了缓存，要每次都请求的话，改成activated,或者app.vue改
     mounted() {
         this.getDetailInfo()
     }
+    // activated()
 }
 </script>
 

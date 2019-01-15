@@ -1,9 +1,10 @@
 <template>
     <div>
-        <div class="item" v-for="(item, index) of list" :key="index">
+        <div class="item" v-for="(item, index) in list" :key="index">
             <div class="item-title border-bottom">
                 <span class="item-title-icon"></span> {{ item.title }}
             </div>
+            <!-- 递归组件再次调用 -->
             <div v-if="item.children" class="item-chilren">
                 <detail-list :list="item.children"></detail-list>
             </div>
@@ -40,6 +41,6 @@ export default {
 }
 
 .item-chilren {
-    padding: 0 0.2rem;
+    padding: 0 0.5rem;
 }
 </style>
