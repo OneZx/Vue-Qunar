@@ -1,5 +1,6 @@
 <template>
     <ul class="list">
+        <!-- touchstart.prevent 阻止页面跟着一起滚动 -->
         <li
             class="item"
             v-for="item in letters"

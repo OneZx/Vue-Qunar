@@ -6,6 +6,7 @@ import router from './router'
 // 点击延迟 npm install fastclick --save
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'babel-polyfill'
 
 import store from './store'
 import 'swiper/dist/css/swiper.css'

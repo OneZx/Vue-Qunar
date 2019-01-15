@@ -8,11 +8,12 @@ module.exports = {
     dev: {
         // Paths
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/',
-        // webpack dev serve提供
+        assetsPublicPath: './',
+        // webpack dev serve提供 开发环境时 把接口代理成本地文件
         proxyTable: {
             '/api': {
                 target: 'http://localhost:8080',
+                // 接口地址就在这里改，下面可以删掉
                 pathRewrite: {
                     '^/api': '/static/mock'
                 }
@@ -57,7 +58,9 @@ module.exports = {
         // Paths
         assetsRoot: path.resolve(__dirname, '../dist'),
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/',
+        // 打包后运行在后端的project目录下就改成‘/project’，把dist改名project，扔到后端根目录下
+        // 访问project
+        assetsPublicPath: './',
 
         /**
          * Source Maps
